@@ -9,9 +9,9 @@
 }
 
 body {
-    display: flex;
-    place-items: center;
-    background: linear-gradient(to right, #1aa3ff, #ffffff);
+  display: flex;
+  place-items: center;
+  background: linear-gradient(to right, #1aa3ff, #ffffff);
 }
 
 button {
@@ -20,10 +20,10 @@ button {
   height: 25px;
   border-radius: 15px;
   background-color: #2491da;
-  color:#ffffff;
-   &:hover {
+  color: #ffffff;
+  &:hover {
     cursor: pointer;
-   }
+  }
 }
 
 .actions-container {
@@ -32,5 +32,3 @@ button {
   align-items: center;
   gap: 10px;
 }
-
-
