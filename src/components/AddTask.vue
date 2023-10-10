@@ -14,8 +14,6 @@ function addTask() {
       this.showValidationMessage = true
       return
     }
-    debugger
-    console.log(name)
     store.addTask(name)
     this.taskName = ''
     this.showValidationMessage = false
@@ -31,6 +29,13 @@ function addTask() {
 </template>
 
 <style lang="scss" scoped>
+
+form {
+    display: flex;
+    justify-content: space-around;
+    align-items: vertical;
+    gap: 10px;
+}
 p {
   color: red
 }

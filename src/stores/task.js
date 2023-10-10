@@ -13,12 +13,11 @@ export const useTaskStore = defineStore('TaskStore', {
         tasksList(state) {
             return state.tasks
         },
-
+    },
     actions: {
         fetchTasks() {
             // If there are some tasks in the localStorage, fetch them, otherwise set the tasks list to empty
             const savedTasks = JSON.parse(localStorage.getItem('tasks'))
-            debugger
             this.tasks = savedTasks ??  []
         },
         addTask(name) {
@@ -49,7 +48,6 @@ export const useTaskStore = defineStore('TaskStore', {
             this.updateLocalDB()
         },
         updateLocalDB() {
-            debugger
             localStorage.setItem('tasks', JSON.stringify(this.tasks))
         },
         removeAllTasks() {

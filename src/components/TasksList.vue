@@ -23,7 +23,7 @@ function removeAllTasks() {
 </script>
 
 <template>
-    <div class="wrapper">
+    
     <ul>
         <task-item
             v-for="task in tasks"
@@ -31,9 +31,12 @@ function removeAllTasks() {
             :task="task">
         </task-item>
     </ul>
+    <div class="tasks-container">
     <add-task></add-task>
+    <div class="actions-container">
   <button @click="removeAllTasks()">Clear All Tasks</button>
   <button @click="markAllTasksAsComplete()">Mark All As Complete</button>
+</div>
 </div>
 </template>
 
@@ -44,4 +47,14 @@ ul {
     padding: 0;
     place-items: center;
 }
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
 </style>

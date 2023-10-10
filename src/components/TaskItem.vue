@@ -48,18 +48,22 @@ function confirmEditingTask(taskId, taskName) {
 </script>
 
 <template>
-    <li :class="{ taskContainer: true, completed: task.completed }">
+    <div class="task-container">
+    <li :class="{ completed: task.completed }">
       <p>{{ task.name }}</p>
-      <template v-if="isEditing">
+      <input type="checkbox" @change="changeTaskState(task.id)" :checked="task.completed">
+    </li>
+    <div v-if="isEditing" class="actions-container">
       <input type="text" v-model="newTaskName">
       <p v-if="showValidationMessage">Please enter a valid task name</p>
       <button @click="cancelEditingTask()">Cancel</button>
       <button @click="confirmEditingTask(task.id, newTaskName)">Save</button>
-    </template>
-      <input type="checkbox" @change="changeTaskState(task.id)" :checked="task.completed">
+    </div>
+    <div v-else class="actions-container">
       <button @click="startEditingTask()">Edit</button>
       <button @click="removeTask(task.id)">Delete</button>
-    </li>
+    </div>
+</div>
 </template>
 
 <style scoped lang="scss">
@@ -70,7 +74,9 @@ p {
 
 li {
         display: flex;
-        justify-content: space-between;
+        flex-grow:1;
+        justify-content: space-around;
+        gap: 10px;
         margin: 10px 0;
         padding: 10px;
         background-color: rgba(255, 255, 255, 0.95); 
@@ -79,8 +85,8 @@ li {
 
         p {
             margin: 0;
-            font-size: 16px;
-            color: red;
+            font-size: 1rem;
+            color: rgb(18, 134, 228);
         }
 
         &.completed {
@@ -91,7 +97,10 @@ li {
 
 .task-container {
     display: flex;
-    place-items: center;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
 }
+
 
 </style>
