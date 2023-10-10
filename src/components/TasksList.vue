@@ -1,7 +1,6 @@
 <script setup>
 
 import TaskItem from './TaskItem.vue';
-import AddTask from './AddTask.vue';
 
 // To better respect the single responsibility principle, passing tasks as props to this component should be avoided since only this component
 // should be responsible of managing tasks, but it's needed it we want to implment the bonus routing task of the assignment 
@@ -32,7 +31,7 @@ function removeAllTasks() {
         </task-item>
     </ul>
     <div class="tasks-container">
-    <add-task></add-task>
+    
     <div class="actions-container">
   <button @click="removeAllTasks()">Clear All Tasks</button>
   <button @click="markAllTasksAsComplete()">Mark All As Complete</button>
