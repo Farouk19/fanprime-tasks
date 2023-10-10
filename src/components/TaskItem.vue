@@ -2,7 +2,7 @@
 
 import { ref } from 'vue'
 
-import { useTaskStore } from '../stores/TaskStore'
+import { useTaskStore } from '../stores/task'
 
 defineProps({
   task: {
@@ -41,6 +41,7 @@ function confirmEditingTask(taskId, taskName) {
   }
   store.editTask(taskId, taskName)
   this.isEditing = false
+  this.newTaskName = ''
 }
 
 
